@@ -1,0 +1,20 @@
+body {
+  background-color: #e9ecef;
+}
+
+.vertical-center {
+  min-height: 80%; /* Fallback for browsers do NOT support vh unit */
+  min-height: 80vh; /* These two lines are counted as one :-)       */
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand {
+  font-size: 28px;
+}
+
+footer {
+  background-color: #343a40;
+  color: hsl(240, 1%, 78%);
+  padding-top: 4px;
+}

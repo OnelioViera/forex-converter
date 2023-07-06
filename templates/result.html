@@ -1,0 +1,18 @@
+<!-- Child Template -->
+{% extends "base.html" %}
+{% include "nav.html" %}
+{% block content %}
+
+<body>
+    <div class="row d-flex justify-content-center">
+        <div class="col-6">
+            <h1 class="mb-4">Conversion Result</h1>
+            <!-- Results from conversion -->
+            <p class="h4">{{ result }}</p>
+            <br>
+            <a href="/" class="btn btn-success btn-sm active" role="button" aria-pressed="true">Back to Converter</a>
+        </div>
+    </div>
+</body>
+
+{% endblock %}

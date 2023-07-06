@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% include "nav.html" %}
+{% block content %}
+
+<body>
+    <div class="row d-flex justify-content-center">
+        <div class="col-6">
+            <h1>Currency Converter</h1>
+            <!-- Conversion form -->
+            <form method="POST" action="/">
+                <div class="form-group">
+                    <label for="base_currency">From:</label>
+                    <select id="base_currency" class="form-control" name="base_currency">
+                        {% for country, currency_code in countries.items() %}
+                        <option value="{{ currency_code }}">{{ country }}</option>
+                        {% endfor %}
+                    </select>
+                    <br>
+                    <label for="target_currency">To:</label>
+                    <select id="target_currency" class="form-control" name="target_currency">
+                        {% for country, currency_code in countries.items() %}
+                        <option value="{{ currency_code }}">{{ country }}</option>
+                        {% endfor %}
+                    </select>
+                    <br>
+                    <label for="amount">Amount:</label>
+                    <input type="number" class="form-control" id="amount" name="amount" required>
+                    <br>
+                    <input type="submit" class="btn btn-success btn-md" value="Convert">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div>
+    </div>
+</body>
+
+{% endblock %}
