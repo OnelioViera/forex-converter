@@ -11,15 +11,15 @@
                 <div class="form-group">
                     <label for="base_currency">From:</label>
                     <select id="base_currency" class="form-control" name="base_currency">
-                        {% for country, currency_code in countries.items() %}
-                        <option value="{{ currency_code }}">{{ country }}</option>
+                        {% for currency_code, country_name in countries.items() %}
+                        <option value="{{ currency_code }}">{{ currency_code }} - {{ country_name }}</option>
                         {% endfor %}
                     </select>
                     <br>
                     <label for="target_currency">To:</label>
                     <select id="target_currency" class="form-control" name="target_currency">
-                        {% for country, currency_code in countries.items() %}
-                        <option value="{{ currency_code }}">{{ country }}</option>
+                        {% for currency_code, country_name in countries.items() %}
+                        <option value="{{ currency_code }}">{{ currency_code }} - {{ country_name }}</option>
                         {% endfor %}
                     </select>
                     <br>
