@@ -5,22 +5,22 @@ app = Flask(__name__)
 
 # A dictiionary list of countries and their three-letter currency codes
 countries = {
-    "United States": "USD",
-    "Australia": "AUD",
-    "Brazil": "BRL",
-    "Canada": "CAD",
-    "China": "CNY",
-    "Eurozone": "EUR",
-    "India": "INR",
-    "Japan": "JPY",
-    "Mexico": "MXN",
-    "New Zealand": "NZD",
-    "Russia": "RUB",
-    "Saudi Arabia": "SAR",
-    "South Africa": "ZAR",
-    "South Korea": "KRW",
-    "Switzerland": "CHF",
-    "United Kingdom": "GBP",
+    "USD": "United States",
+    "AUD": "Australia",
+    "BRL": "Brazil",
+    "CAD": "Canada",
+    "CNY": "China",
+    "EUR": "Eurozone",
+    "INR": "India",
+    "JPY": "Japan",
+    "MXN": "Mexico",
+    "NZD": "New Zealand",
+    "RUB": "Russia",
+    "SAR": "Saudi Arabia",
+    "ZAR": "South Africa",
+    "KRW": "South Korea",
+    "CHF": "Switzerland",
+    "GBP": "United Kingdom",
 }
 
 
@@ -30,6 +30,10 @@ def currency_converter():
         base_currency = request.form["base_currency"]
         target_currency = request.form["target_currency"]
         amount = request.form["amount"]
+
+        if base_currency == target_currency:
+            error_message = "Please select different currencies for conversion."
+            return render_template("error.html", message=error_message)
 
         c = CurrencyRates()
         cc = CurrencyCodes()
