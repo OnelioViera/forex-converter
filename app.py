@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request
 from forex_python.converter import CurrencyRates, CurrencyCodes
-from app_test import convert_currency
 
 
 app = Flask(__name__)
